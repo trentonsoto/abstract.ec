@@ -1,0 +1,287 @@
+:root {
+    --background: #f0ede6;
+    --foreground: #1a1a1a;
+    --red: #d63b2f;
+    --saturated-red: #b02f25;
+    --line-color: rgba(26, 26, 26, 0.3);
+    --size-meta: 0.75rem;
+    --size-label: 1.15rem;
+    --small-dot: 0.45rem;
+    --medium-dot: 0.65rem;
+    --large-dot: 0.95rem;
+    --xl-dot: 1.3rem;   
+    --vertical: 1.5rem;
+    --horizontal: 2.5rem;
+    --section-vertical: 3rem;
+    --artwork-width: 20rem;
+    --header-height: 4rem;
+    --half-rem: 0.5rem;
+    --tworem: 2rem;
+}
+
+.dark-mode {
+    --background: #1a1a1a;
+    --foreground: #f0ede6;
+    --red: #e8453a;
+    --line-color: rgba(240, 237, 230, 0.3);
+}
+
+body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    min-height: 100vh;
+}
+
+
+.ec-title {
+    display: inline-block;
+    padding: var(--vertical) var(--horizontal);
+    font-size: var(--size-meta);
+    opacity: 0.7;
+}
+.ec-toggle {
+    display: inline-block;
+    padding: var(--vertical) var(--horizontal);
+    font-size: var(--size-meta);
+    opacity: 0.7;
+    align-items: center;
+    gap: var(--tworem);
+    padding: var(--vertical) var(--horizontal);
+    float: right;
+
+    span {
+        cursor: pointer;
+        opacity: 0.7;
+    }
+
+    span:active {
+        opacity: 1;
+    }
+
+    .toggle-checkbox {
+        display: none;
+    }
+}
+
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: calc(100vh - var(--header-height));
+    border-top: 1px solid var(--line-color);
+}
+@media (max-width: 700px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+}
+
+section {
+    position: relative;
+    padding: var(--section-vertical) var(--horizontal);
+    border-right: 1px solid var(--line-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    /* inset: 0; */
+}
+.interpolation {
+    border-right: none;
+}
+
+.ec-label {
+    position: absolute;
+    top: var(--vertical);
+    left: var(--horizontal);
+    font-size: var(--size-label);
+    opacity: 0.7;
+    /* letter-spacing: 0.05em; */
+}
+
+figcaption {
+    margin-top: var(--tworem);
+    font-size: var(--size-meta);
+    line-height: calc(var(--tworem)/1.5);
+    opacity: 0.5;
+    text-align: center;
+    text-transform: uppercase;
+
+    a {
+        color: var(--red);
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+
+.understanding {
+    position: relative;
+    width: var(--artwork-width);
+    background: var(--background);
+    aspect-ratio: 3 / 4;
+    /* found this on mdn when looking for how to keep a set size for (in my case) the artworks */
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/aspect-ratio */
+    border: 1px solid var(--line-color);
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    container-type: inline-size;
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Containment/Container_queries */
+    /* omg I found it! and the container query links helped a bunch! oh em gee. */
+
+    .short-word {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .letter {
+        font-size: 40cqw;
+        /* https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Containment/Container_queries */
+        font-weight: bold;
+        color: var(--red);
+        letter-spacing: -0.05em;
+        font-style: italic;
+    }
+
+    .words {
+        font-size: 4cqw;
+        /* https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Containment/Container_queries */
+        font-weight:400;
+        color: var(--foreground);
+        letter-spacing: 0.01em;
+        line-height: 1;
+        width: 5vw;
+        text-align: right;
+        opacity: 0.7;
+        transform: rotate(90deg);
+    }
+
+}
+.not {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    font-size: var(--size-label);
+    font-weight: bold;
+    color: var(--foreground);
+    opacity: 0.8;
+}
+
+.own {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    font-size: var(--size-label);
+    font-weight: bold;
+    color: var(--foreground);
+    opacity: 0.8;
+}
+
+
+.second-artwork {
+    position: relative;
+    width: var(--artwork-width);
+    aspect-ratio: 3 / 4;
+    background: var(--red);
+    overflow: hidden;
+     border: 1px solid var(--line-color);
+
+
+    .lines {
+        position: absolute;
+        display: flex; 
+        flex-direction: column;
+        justify-content: space-evenly;
+        inset: 0;
+    }
+
+    .line {
+        height: 0.05rem;
+        background: rgba(255, 255, 255, 0.3);
+        width: 100%;
+        opacity: 0.6;
+    }
+
+    .circles {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding: var(--half-rem);
+        top: 0;
+        left: 50%;
+        bottom: 1rem;
+        transform: translateX(-50%);
+        align-items: center;
+
+        .circle-light, .circle-dark {
+            border-radius: 50%;
+            width: var(--small-dot);
+            height: var(--small-dot);
+        }
+
+        .circle-light {
+            background: rgba(255, 255, 255, 0.75);
+        }
+        .circle-dark {
+            background: rgba(25, 25, 25, 0.75);
+        }
+
+        .circle-light:nth-child(1) {
+            opacity: 0.9;
+        }
+        .circle-light:nth-child(2) {
+            opacity: 0.75;
+        }
+        .circle-light:nth-child(3) {
+            opacity: 0.6;
+        }
+        .circle-light:nth-child(4) {
+            opacity: 0.45;
+        }
+        .circle-light:nth-child(5) {
+            opacity: 0.3;
+        }
+        .circle-dark:nth-child(6) {
+            width: var(--medium-dot);
+            height: var(--medium-dot);
+        }
+        .circle-dark:nth-child(7) {
+            width: var(--medium-dot);
+            height: var(--medium-dot);
+        }
+        .circle-dark:nth-child(8) {
+            width: var(--large-dot);
+            height: var(--large-dot);
+        }
+        .circle-dark:nth-child(9) {
+            width: var(--large-dot);
+            height: var(--large-dot);
+        }
+        .circle-dark:nth-child(10) {
+            width: var(--large-dot);
+            height: var(--large-dot);
+        }
+        .circle-dark:nth-child(11) {
+            width: var(--xl-dot);
+            height: var(--xl-dot);
+        }
+        .circle-dark:nth-child(12) {
+            width: var(--xl-dot);
+            height: var(--xl-dot);
+        }
+        .circle-dark:nth-child(13) {
+            width: var(--xl-dot);
+            height: var(--xl-dot);
+        }
+    }
+
+
+}
