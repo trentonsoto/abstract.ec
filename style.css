@@ -165,3 +165,8 @@ figcaption {
     color: var(--foreground);
     opacity: 0.8;
 }
+
+
+.interpolation {
+    position: relative;
+}
