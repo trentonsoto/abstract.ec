@@ -52,10 +52,10 @@ body {
 
     span {
         cursor: pointer;
-        opacity: 0.7;
+        opacity: 0.6;
     }
 
-    span:active {
+    span.active {
         opacity: 1;
     }
 
