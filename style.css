@@ -117,8 +117,6 @@ figcaption {
         align-items: center;
         justify-content: center;
         overflow: hidden;
-        /* font-size: var(--size-meta); */
-        /* text-align: center; */
     }
 
     .letter {
@@ -126,10 +124,8 @@ figcaption {
         /* https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Containment/Container_queries */
         font-weight: bold;
         color: var(--red);
-        /* line-height: 0.5; */
         letter-spacing: -0.05em;
         font-style: italic;
-        /* white-space: nowrap; */
     }
 
     .words {
@@ -143,7 +139,6 @@ figcaption {
         text-align: right;
         opacity: 0.7;
         transform: rotate(90deg);
-        /* flex-shrink: 0; */
     }
 
 }
@@ -174,18 +169,50 @@ figcaption {
     aspect-ratio: 3 / 4;
     background: var(--red);
     overflow: hidden;
+    border: 1px solid var(--line-color);
+
 
     .lines {
         position: absolute;
         display: flex; 
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: space-evenly;
         inset: 0;
     }
 
     .line {
-        height: var(--half-rem);
-        color: var(--background);
-        background: var(--background);
+        height: 0.05rem;
+        /* color: var(--background); */
+        background: rgba(255, 255, 255, 0.3);
+        width: 100%;
     }
+
+    .circles {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding: var(--half-rem);
+        top: 0;
+        left: 50%;
+        bottom: 1rem;
+        transform: translateX(-50%);
+
+        .circle-light, .circle-dark {
+            border-radius: 50%;
+            width: var(--small-dot);
+            height: var(--small-dot);
+        }
+
+        .circle-light {
+            background: rgba(255, 255, 255, 0.75);
+        }
+        .circle-dark {
+            background: rgba(25, 25, 25, 0.75);
+        }
+
+        
+    }
+
+
 }
