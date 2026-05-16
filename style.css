@@ -167,6 +167,10 @@ figcaption {
 }
 
 
-.interpolation {
+.second-artwork {
     position: relative;
+    width: var(--artwork-width);
+    aspect-ratio: 3 / 4;
+    background: var(--red);
+    overflow: hidden;
 }
