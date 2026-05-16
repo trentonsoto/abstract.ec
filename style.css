@@ -107,6 +107,9 @@ figcaption {
     overflow: hidden;
     display: grid;
     grid-template-rows: repeat(4, 1fr);
+    container-type: inline-size;
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Containment/Container_queries */
+    /* omg I found it! and the container query links helped a bunch! oh em gee. */
 
     .short-word {
         display: flex;
@@ -118,7 +121,8 @@ figcaption {
     }
 
     .letter {
-        font-size: 7.5vw;
+        font-size: 40cqw;
+        /* https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Containment/Container_queries */
         font-weight: bold;
         color: var(--red);
         /* line-height: 0.5; */
@@ -128,7 +132,8 @@ figcaption {
     }
 
     .words {
-        font-size: 1vw;
+        font-size: 4cqw;
+        /* https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Containment/Container_queries */
         font-weight:400;
         color: var(--foreground);
         letter-spacing: 0.01em;
