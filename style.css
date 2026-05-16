@@ -8,9 +8,9 @@
     --size-meta: 0.75rem;
     --size-label: 1.15rem;
     --small-dot: 0.45rem;
-    --medium-dot: 0.5rem;
-    --large-dot: 0.55rem;
-    --xl-dot: 0.6rem;   
+    --medium-dot: 0.65rem;
+    --large-dot: 0.95rem;
+    --xl-dot: 1.3rem;   
 
     --vertical: 1.5rem;
     --horizontal: 2.5rem;
@@ -47,6 +47,7 @@ main {
     display: grid;
     grid-template-columns: 1fr 1fr;
     min-height: calc(100vh - var(--header-height));
+    border-top: 1px solid var(--line-color);
 }
 
 @media (max-width: 700px) {
@@ -169,7 +170,7 @@ figcaption {
     aspect-ratio: 3 / 4;
     background: var(--red);
     overflow: hidden;
-    border: 1px solid var(--line-color);
+     border: 1px solid var(--line-color);
 
 
     .lines {
@@ -182,9 +183,9 @@ figcaption {
 
     .line {
         height: 0.05rem;
-        /* color: var(--background); */
         background: rgba(255, 255, 255, 0.3);
         width: 100%;
+        opacity: 0.6;
     }
 
     .circles {
@@ -197,6 +198,7 @@ figcaption {
         left: 50%;
         bottom: 1rem;
         transform: translateX(-50%);
+        align-items: center;
 
         .circle-light, .circle-dark {
             border-radius: 50%;
@@ -211,7 +213,53 @@ figcaption {
             background: rgba(25, 25, 25, 0.75);
         }
 
-        
+        .circle-light:nth-child(1) {
+            opacity: 0.9;
+        }
+        .circle-light:nth-child(2) {
+            opacity: 0.75;
+        }
+        .circle-light:nth-child(3) {
+            opacity: 0.6;
+        }
+        .circle-light:nth-child(4) {
+            opacity: 0.45;
+        }
+        .circle-light:nth-child(5) {
+            opacity: 0.3;
+        }
+        .circle-dark:nth-child(6) {
+            width: var(--medium-dot);
+            height: var(--medium-dot);
+        }
+        .circle-dark:nth-child(7) {
+            width: var(--medium-dot);
+            height: var(--medium-dot);
+        }
+        .circle-dark:nth-child(8) {
+            width: var(--large-dot);
+            height: var(--large-dot);
+        }
+        .circle-dark:nth-child(9) {
+            width: var(--large-dot);
+            height: var(--large-dot);
+        }
+        .circle-dark:nth-child(10) {
+            width: var(--large-dot);
+            height: var(--large-dot);
+        }
+        .circle-dark:nth-child(11) {
+            width: var(--xl-dot);
+            height: var(--xl-dot);
+        }
+        .circle-dark:nth-child(12) {
+            width: var(--xl-dot);
+            height: var(--xl-dot);
+        }
+        .circle-dark:nth-child(13) {
+            width: var(--xl-dot);
+            height: var(--xl-dot);
+        }
     }
 
 
