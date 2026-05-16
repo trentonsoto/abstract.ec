@@ -65,7 +65,7 @@ section {
     min-height: 80vh;
     /* inset: 0; */
 }
-section:last-child {
+.interpolation {
     border-right: none;
 }
 
@@ -97,5 +97,66 @@ figcaption {
 
 
 .understanding {
-    
+    position: relative;
+    width: var(--artwork-width);
+    background: var(--background);
+    aspect-ratio: 3 / 4;
+    /* found this on mdn when looking for how to keep a set size for (in my case) the artworks */
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/aspect-ratio */
+    border: 1px solid var(--line-color);
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+
+    .short-word {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        /* font-size: var(--size-meta); */
+        /* text-align: center; */
+    }
+
+    .letter {
+        font-size: 7.5vw;
+        font-weight: bold;
+        color: var(--red);
+        /* line-height: 0.5; */
+        letter-spacing: -0.05em;
+        font-style: italic;
+        /* white-space: nowrap; */
+    }
+
+    .words {
+        font-size: 1vw;
+        font-weight:400;
+        color: var(--foreground);
+        letter-spacing: 0.01em;
+        line-height: 1;
+        width: 5vw;
+        text-align: right;
+        opacity: 0.7;
+        transform: rotate(90deg);
+        /* flex-shrink: 0; */
+    }
+
+}
+.not {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    font-size: var(--size-label);
+    font-weight: bold;
+    color: var(--foreground);
+    opacity: 0.8;
+}
+
+.own {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    font-size: var(--size-label);
+    font-weight: bold;
+    color: var(--foreground);
+    opacity: 0.8;
 }
