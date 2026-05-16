@@ -5,7 +5,7 @@
     --saturated-red: #b02f25;
     --line-color: rgba(26, 26, 26, 0.3);
 
-    --size-meta: 0.65rem;
+    --size-meta: 0.75rem;
     --size-label: 1.15rem;
     --small-dot: 0.45rem;
     --medium-dot: 0.5rem;
@@ -30,5 +30,26 @@ body {
 
 .ec-title {
     display: inline-block;
+    padding: var(--vertical) var(--horizontal);
+    font-size: var(--size-meta);
+    opacity: 0.7;
+}
 
+.ec-toggle {
+    display: inline-block;
+    padding: var(--vertical) var(--horizontal);
+    font-size: var(--size-meta);
+    opacity: 0.7;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: calc(100vh - var(--header-height));
+}
+
+@media (max-width: 700px) {
+    main {
+        grid-template-columns: 1fr;
+    }
 }
