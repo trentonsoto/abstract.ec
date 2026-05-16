@@ -4,14 +4,12 @@
     --red: #d63b2f;
     --saturated-red: #b02f25;
     --line-color: rgba(26, 26, 26, 0.3);
-
     --size-meta: 0.75rem;
     --size-label: 1.15rem;
     --small-dot: 0.45rem;
     --medium-dot: 0.65rem;
     --large-dot: 0.95rem;
     --xl-dot: 1.3rem;   
-
     --vertical: 1.5rem;
     --horizontal: 2.5rem;
     --section-vertical: 3rem;
@@ -21,7 +19,6 @@
     --tworem: 2rem;
 }
 
-
 body {
     background: var(--background);
     color: var(--foreground);
@@ -29,19 +26,24 @@ body {
     min-height: 100vh;
 }
 
+
 .ec-title {
     display: inline-block;
     padding: var(--vertical) var(--horizontal);
     font-size: var(--size-meta);
     opacity: 0.7;
 }
-
 .ec-toggle {
     display: inline-block;
     padding: var(--vertical) var(--horizontal);
     font-size: var(--size-meta);
     opacity: 0.7;
+    align-items: center;
+    gap: var(--tworem);
+    padding: var(--vertical) var(--horizontal);
+    float: right;
 }
+
 
 main {
     display: grid;
@@ -49,7 +51,6 @@ main {
     min-height: calc(100vh - var(--header-height));
     border-top: 1px solid var(--line-color);
 }
-
 @media (max-width: 700px) {
     main {
         grid-template-columns: 1fr;
