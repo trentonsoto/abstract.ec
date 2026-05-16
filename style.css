@@ -17,6 +17,7 @@
     --section-vertical: 3rem;
     --artwork-width: 20rem;
     --header-height: 4rem;
+    --half-rem: 0.5rem;
     --tworem: 2rem;
 }
 
@@ -173,4 +174,18 @@ figcaption {
     aspect-ratio: 3 / 4;
     background: var(--red);
     overflow: hidden;
+
+    .lines {
+        position: absolute;
+        display: flex; 
+        flex-direction: column;
+        justify-content: space-between;
+        inset: 0;
+    }
+
+    .line {
+        height: var(--half-rem);
+        color: var(--background);
+        background: var(--background);
+    }
 }
