@@ -183,6 +183,20 @@ figcaption {
     opacity: 0.8;
 }
 
+.discernment-text:nth-child(3) {
+    position: absolute;
+    bottom: var(--half-rem);
+    left: var(--half-rem);
+    color: var(--background);
+    font-size: var(--size-meta);
+}
+.discernment-text:nth-child(4) {
+    position: absolute;
+    bottom: var(--half-rem);
+    right: var(--half-rem);
+    color: var(--background);
+    font-size: var(--size-meta);
+}
 
 .second-artwork {
     position: relative;
@@ -190,7 +204,7 @@ figcaption {
     aspect-ratio: 3 / 4;
     background: var(--red);
     overflow: hidden;
-     border: 1px solid var(--line-color);
+    border: 1px solid var(--line-color);
 
 
     .lines {
