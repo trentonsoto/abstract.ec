@@ -4,6 +4,20 @@
     --red: #d63b2f;
     --saturated-red: #b02f25;
     --line-color: rgba(26, 26, 26, 0.3);
+
+    --size-meta: 0.65rem;
+    --size-label: 1.15rem;
+    --small-dot: 0.45rem;
+    --medium-dot: 0.5rem;
+    --large-dot: 0.55rem;
+    --xl-dot: 0.6rem;   
+
+    --vertical: 1.5rem;
+    --horizontal: 2.5rem;
+    --section-vertical: 3rem;
+    --artwork-width: 20rem;
+    --header-height: 4rem;
+    --tworem: 2rem;
 }
 
 
@@ -11,4 +25,10 @@ body {
     background: var(--background);
     color: var(--foreground);
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    min-height: 100vh;
+}
+
+.ec-title {
+    display: inline-block;
+
 }
