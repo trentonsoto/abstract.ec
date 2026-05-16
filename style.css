@@ -53,3 +53,49 @@ main {
         grid-template-columns: 1fr;
     }
 }
+
+section {
+    position: relative;
+    padding: var(--section-vertical) var(--horizontal);
+    border-right: 1px solid var(--line-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    /* inset: 0; */
+}
+section:last-child {
+    border-right: none;
+}
+
+.ec-label {
+    position: absolute;
+    top: var(--vertical);
+    left: var(--horizontal);
+    font-size: var(--size-label);
+    opacity: 0.7;
+    /* letter-spacing: 0.05em; */
+}
+
+figcaption {
+    margin-top: var(--tworem);
+    font-size: var(--size-meta);
+    line-height: calc(var(--tworem)/1.5);
+    opacity: 0.5;
+    text-align: center;
+    text-transform: uppercase;
+
+    a {
+        color: var(--red);
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+
+.understanding {
+    
+}
